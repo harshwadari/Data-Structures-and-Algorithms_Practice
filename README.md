@@ -2,7 +2,7 @@
 
 This repository contains my solutions to Data Structures and Algorithms problems solved across various platforms.
 
-Iam Following Strivers A-Z sheet 
+# Iam Following Strivers A-Z sheet 
 
 ## Progress
 
