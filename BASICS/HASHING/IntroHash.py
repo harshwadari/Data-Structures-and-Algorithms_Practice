@@ -9,9 +9,9 @@ It converts a key into an index where the value is stored.
 
 In Python, hashing is mainly used in:
 
-dict {}
+dict {}  dict can store duplicate values but not duplicate keys. It is an unordered collection of key-value pairs. It is mutable and indexed by keys.
 
-set ()
+set () set is an unordered collection of unique elements. It is mutable and does not allow duplicate values.
 """
 
 
@@ -20,7 +20,7 @@ set ()
 def hashingdict(nums):
     freq = {}
     for i in range(len(nums)):
-        if nums[i] in freq:
+        if nums[i] in freq: # in here is called membership operator which checks if the element is present in the dictionary or not
             freq[nums[i]] +=1
         else:
             freq[nums[i]] =1
