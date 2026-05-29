@@ -2,7 +2,8 @@
 
 This repository contains my solutions to Data Structures and Algorithms problems solved across various platforms.
 
-# Iam Following Strivers A-Z sheet 
+## Iam Following Strivers A-Z sheet 
+Link [https://takeuforward.org/profile/harshwadari]
 
 ## Progress
 
@@ -62,3 +63,5 @@ LeetCode: [https://leetcode.com/u/harshwadari/]
 GeeksforGeeks: [https://www.geeksforgeeks.org/profile/harshwadari]
 
 HackerRank: [https://www.hackerrank.com/profile/harshwadari]
+
+Coodolio : [https://codolio.com/profile/harshwadari]
