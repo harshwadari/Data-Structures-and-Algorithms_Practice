@@ -1,7 +1,7 @@
 #Implement Lower Bound
 
 '''
-Docstring for BinarySearch.Bson1Darrays.2
+
 lower bound is smallest index which is nums[i] >= target
 lower bound is the first occurrence of target in the sorted array
 if target is not present in the array then it will return the index of the next greater element
