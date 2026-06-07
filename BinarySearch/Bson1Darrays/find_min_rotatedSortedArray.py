@@ -1,16 +1,23 @@
-# find min in roatated sorted array
+# find out how many times arr is rotated
 
-#burute force using linear search
+# brut first we have to fin min the return min index
 
-def minm(nums):
-    mni = float('inf')
+def brut(nums):
+    return min(nums)
+
+# better brute
+
+def better(nums):
+    mini = nums[0]
     for i in range(len(nums)):
-        mini = min(mini,nums[i])
+        if nums[i] < mini:
+            mini = nums[i]
     return mini
+print(better([5,4,3,1,8]))
 
 
-# optimal using binary search
-#TC = O(logN) and SC = O(1)
+# optimal approach using binary search same as find min in rotated sorted array
+
 def binminm(nums):
     n = len(nums)
     low = 0
@@ -25,4 +32,3 @@ def binminm(nums):
             mini = min(mini,nums[low])
             low = mid+1
     return mini
-print(binminm([4,5,6,7,0,1,2,3]))

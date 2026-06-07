@@ -29,7 +29,10 @@ def searchrot(nums,target):
 
 
 
-# optimal approach using binary searc
+# optimal approach using binary search 
+"""
+Here identify sorted part and apply bs on that sorted part and look for target 
+"""
 # TC + O(logN) and SC = O(1)
 
 def binsearchrot(nums,target):

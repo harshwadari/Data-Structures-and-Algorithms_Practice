@@ -17,6 +17,19 @@ Output: 3
 Explanation: The number 1 appears 3 times in the array.
 """
 
+
+
+# brute force approach using linear seach
+#TC = O(N) and SC = O(1)
+def counting(nums,target):
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] == target:
+            count += 1
+    return count
+
+
+
 # optimal approach using binary search
 
 def countOccurences(arr,target):
