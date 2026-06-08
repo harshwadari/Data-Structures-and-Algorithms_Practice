@@ -35,7 +35,7 @@ def koko(piles,h):
 print(koko([3,6,7,11],8))
         
 
-# optimal appraoch using binary search
+# optimal appraoch using binary search on answer space 
 # TC = O(logN) and SC = O(1)
 def bskoko(piles,h):
     low = 1

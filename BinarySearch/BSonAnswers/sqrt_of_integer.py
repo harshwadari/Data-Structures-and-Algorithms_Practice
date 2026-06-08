@@ -3,7 +3,7 @@
 Given a positive integer n, find the square root of n. If n is not a perfect square, then return the floor value.
 Floor value of any number is the greatest Integer which is less than or equal to that number.
 """
-# https://www.geeksforgeeks.org/problems/square-root/1
+
 # approach using built in python math function
 #TC = O(N) for float value and for floor TC = O(logN) and SC = O(1)
 import math 

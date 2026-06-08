@@ -16,7 +16,7 @@ Explanation: merged array = [1,2,3] and median is 2.
 
 # brut force approach merge two sorted if len of merged arr is even n//2 else one formula
 # TC = O(N+M) and SC = O(N+M)
-def medsort(nums1,nums2):
+def medsort(nums1 : list[int],nums2 : list[int])-> float:
     n = len(nums1)
     m = len(nums2)
     i = 0
@@ -36,10 +36,10 @@ def medsort(nums1,nums2):
         merged.append(nums2[j])
         j +=1
     r = len(merged)
-    if r%2 ==1:
+    if r%2 == 1: # this tells odd
         return merged[r//2]
     else:
-        return (merged[r//2-1] + merged[r//2])/2
+        return (merged[r//2-1] + merged[r//2])/2.0
 print(medsort([1,2],[3,4]))
 
 
