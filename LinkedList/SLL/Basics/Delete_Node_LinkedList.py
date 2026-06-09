@@ -15,7 +15,6 @@ Docstring for LinkedList.2
 
 class Solution:
     def deleteHead(self, head):
-        #your code goes here
         if head is None or head.next is None:
             return None
         head = head.next

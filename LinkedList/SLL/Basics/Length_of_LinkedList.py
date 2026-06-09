@@ -1,5 +1,6 @@
 # to check the lenght of linked list by traversing it 
 
+# TC = O(N) and SC = O(1)
 
 class Node:
     def __init__(self,val):

@@ -10,6 +10,39 @@ Input: head = [1,2,3,4,5]
 Output: [5,4,3,2,1]
 """
 
+
+# extreme naive appraoch 
+"""
+first we will traverse linked list and put all values inside a array 
+then reverse arrray and again travese array and put all reverse data inside linked list 
+"""
+# TC = O(3N) and SC = O(N)
+def reverseList(self, head):
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        arr = []
+        temp = head
+        while temp != None:
+            arr.append(temp.val)
+            temp = temp.next
+        left = 0
+        right = len(arr) - 1
+        while left <= right:
+            arr[left] , arr[right] = arr[right], arr[left]
+            left += 1
+            right -= 1
+        temp = head
+        for i in range(len(arr)):
+            temp.val = arr[i]
+            temp = temp.next
+        return head
+
+
+
+
+
 # brurte force approach
 # TC = O(2N) and SC = (N)
 def reverse(self,head):
