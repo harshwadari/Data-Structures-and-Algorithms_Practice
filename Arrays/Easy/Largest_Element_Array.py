@@ -1,6 +1,6 @@
 # To find the largest element in an array
 
-#https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1?page=1&category=Arrays&sortBy=submissions
+
 
 # brute appraoch
 #SC = O(NlogN) and SC =O(1)
@@ -37,3 +37,8 @@ def isLargest(nums):
         if nums[i] > largest:
             largest = nums[i]
     return largest
+
+
+# TC = O(N) and SC = O(1)
+def largesttt(nums):
+    return max(nums)
