@@ -9,13 +9,10 @@ Stack has four functions 1.Pop()
 4.size() returns the size of stack 
 
 """
-# TC = O(1) and SC = O(1)
+# TC = O(1) and SC = O(N)
 class Stack:
-    def __init__(self,n):
-        self.n == n
+    def __init__(self):
         self.x = []
-    def isfull(self):
-        return self.n == len(self.x)
     def push(self,value):
         self.x.append(value)
     def pop(self):

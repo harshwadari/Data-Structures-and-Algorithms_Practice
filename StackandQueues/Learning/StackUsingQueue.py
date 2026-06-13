@@ -18,5 +18,17 @@ class StackusingQueue:
         if len(self.queue) == 0:
             return None
         return self.queue[0]
-    def sixe(self):
+    def size(self):
         return len(self.queue)
+
+queue = StackusingQueue()
+queue.push(2)
+queue.push(4)
+queue.push(9)
+queue.pop()
+queue.isempty()
+queue.peek()
+queue.size()
+
+print(queue.peek())
+print(queue.size())

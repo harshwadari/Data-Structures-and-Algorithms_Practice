@@ -7,7 +7,7 @@ Link [https://takeuforward.org/profile/harshwadari]
 
 ## Progress
 
-- Total Problems Solved: 300+
+- Total Problems Solved: 350+
 - LeetCode
 - GeeksforGeeks
 - HackerRank
