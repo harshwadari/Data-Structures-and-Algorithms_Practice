@@ -1,47 +1,45 @@
-
-# brute appraoch
-
-# TC = O(N) and SC = O(N)
-class MinStack(object):
+class SpecialStack:
 
     def __init__(self):
-        self.x = []
-    def push(self, val):
-        """
-        :type val: int
-        :rtype: None
-        """
-        self.x.append(val)
-
+        # Define Stack
+        self.s = []
         
-
+    
+    def push(self, x):
+        # Add an element to the top of Stack
+        if len(self.s) == 0:
+            self.s.append([x,x])
+        else:
+            mini = min(self.s[-1][1],x)
+            self.s.append([x,mini])
+            
+    
     def pop(self):
-        """
-        :rtype: None
-        """
-        if len(self.x) == 0:
+        # Remove the top element from the Stack
+        if len(self.s) == 0:
             return None
-        return self.x.pop()
+        return self.s.pop()
         
 
-    def top(self):
-        """
-        :rtype: int
-        """
-        if len(self.x) == 0:
-            return None
-        return self.x[-1]
+    
+    def peek(self):
+        # Returns top element of Stack
+        if len(self.s) == 0:
+            return -1
+        return self.s[-1][0]
         
-
+    def isEmpty(self):
+        # Check if the stack is empty
+        if len(self.s) == 0:
+            return True
+        return False
+    
     def getMin(self):
-        """
-        :rtype: int
-        """
-        return min(self.x)
+        # Finds minimum element of Stack
+        if len(self.s) == 0:
+            return - 1
+        return self.s[-1][1]
         
-
-
-
-# Optimal appraoch 
-
-
+        
+        
+        

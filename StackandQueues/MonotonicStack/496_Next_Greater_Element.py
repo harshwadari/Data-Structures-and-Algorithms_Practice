@@ -1,4 +1,4 @@
-#Next Greater Element Leetcode  496
+# Next Greater Element Leetcode  496
 
 # brut force approach using nested for loops
 # TC = O(N^2) and SC = O(N)

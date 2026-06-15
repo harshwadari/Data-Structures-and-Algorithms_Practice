@@ -1,5 +1,5 @@
 # Prefix to Postfix conversion
-# TC + O(2N) and SC = O(N)
+# TC = O(2N) and SC = O(N)
 
 def preToPost( s):
     # Code here

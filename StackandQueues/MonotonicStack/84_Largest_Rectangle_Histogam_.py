@@ -13,4 +13,4 @@ def largestRectangleArea(heights):
     return max_area
 
 
-# optimal approach using stack
+# optimal approach using Monotic Stack 

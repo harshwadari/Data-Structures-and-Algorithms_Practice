@@ -1,9 +1,6 @@
-# Next Greater Element II Leetcode 503
+# 503. Next Greater Element II
+# TC = O(N) and SC = O(N)
 def nextGreaterElements(self, nums):
-    """
-    :type nums: List[int]
-    :rtype: List[int]
-    """
     n = len(nums)
     stack = []
     result = [-1] * n

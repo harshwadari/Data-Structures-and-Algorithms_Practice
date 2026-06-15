@@ -14,6 +14,25 @@ Output: 2.00000
 Explanation: merged array = [1,2,3] and median is 2.
 """
 
+
+
+# exteme Niave approach 
+# TC = O(N + M) and SC = O(N + M )
+def medianOf2(self, a, b):
+        # code here
+        result = a + b
+        result.sort()
+        if len(result) %2 == 1:
+            return result[len(result)//2]
+        return (result[len(result)//2 -1] + result[len(result)//2])/ 2.0
+
+
+
+
+
+
+
+
 # brut force approach merge two sorted if len of merged arr is even n//2 else one formula
 # TC = O(N+M) and SC = O(N+M)
 def medsort(nums1 : list[int],nums2 : list[int])-> float:
@@ -44,10 +63,12 @@ print(medsort([1,2],[3,4]))
 
 
 
-# better approach 
+# better approach using two pointer 
 
 def midsort(nums1,nums2):
-    pass
+    i = 0
+    j = 0
+    
 
 
 # optimal using parationing binary search
