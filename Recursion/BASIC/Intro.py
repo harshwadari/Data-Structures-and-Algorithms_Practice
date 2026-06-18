@@ -37,7 +37,7 @@ def greet():
     greet()
 # greet()
 
-
+# This is also called tail recurion where function is called after any task 
 def print_n_times(n:int):
     if n == 0:          # Base case
         return
@@ -49,9 +49,25 @@ def print_n_times(n:int):
 print_n_times(5)
 
 
+"""
+For a recursive function:
+it is O(N + 1)
+TC = O(N) for call N times function 
+
+SC = Maximum recursion depth × space per call
+
+Here:
+
+Maximum depth = n
+Space per call = O(1)
+
+So:
+
+SC = O(n)
+"""
 
 # print 1 to N using recursion
-
+# This is also called head recursion where fucntin is called before any task 
 def OnetoN(n):
     if n == 0:
         return
@@ -71,7 +87,7 @@ def sumN(n):
 
 
 # factorial using recursion
-
+# TC = O(N)  where n is number of functions called and SC = O(N) where n is no of stack space
 def factorial(n):
     if n == 0:
         return 1
