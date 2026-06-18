@@ -7,7 +7,7 @@ Link [https://takeuforward.org/profile/harshwadari]
 
 ## Progress
 
-- Total Problems Solved: 350+
+- Total Problems Solved: 350+ across various platforms:
 - LeetCode
 - GeeksforGeeks
 - HackerRank
@@ -29,7 +29,6 @@ Link [https://takeuforward.org/profile/harshwadari]
 - Greedy
 - Dynamic Programming
 - Backtracking
-- SQL
 
 ## Repository Structure
 

@@ -2,7 +2,7 @@
 
 #TC = I(R * C) where r is rows and c is cols and SC = O(R * C) recusion stack space 
 
-def floodFill(self, image, sr, sc, color):
+def floodFill(image, sr, sc, color):
        
     def dfs(i , j, image,initial_color  , rows,cols,new_color):
         if i < 0 or j < 0 or i >= rows or j >= cols:
