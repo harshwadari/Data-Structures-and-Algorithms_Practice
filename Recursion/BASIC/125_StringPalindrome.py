@@ -15,6 +15,12 @@ def isPalindrome(s: list[str]) -> bool:
 
 
 # Recursive Appraoch
+# TC = O(1/2 * N) = O(N) and SC = O(N/2) stack space 
 
 def ispalindrome(s):
-    pass
+    def func(s,left,right):
+        if left >= right:
+            return True
+        if s[left] != s[right]:
+            return False
+        return func(s,left + 1, right - 1)
