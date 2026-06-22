@@ -2,7 +2,7 @@
 
 
 """
-Docstring for Strings.Easy.5
+
 
 Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
 

@@ -13,4 +13,4 @@ def Selection_sort(nums):
     return nums
 print(Selection_sort([5,4,3,2,1]))
 # time complexity is O(n^2)   and SC = O(1)
-# n^2 is best , worst and average time complexity of selection sort       
+# n^2 is best , worst and average time complexity of selection sort

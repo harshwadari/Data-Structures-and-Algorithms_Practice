@@ -2,7 +2,7 @@
 """
 Constraints:
 
-costs.length == n
+costs.length == n 
 1 <= n <= 105
 1 <= costs[i] <= 105
 1 <= coins <= 108
@@ -23,12 +23,7 @@ def iceCreamBars(costs: list[int] , coins: int) -> int:
 
 # More Optimal solution using counting sort 
 # TC = O(N + 10 ^5) and SC = O(1)
-def maxIceCream(self, costs, coins):
-        """
-        :type costs: List[int]
-        :type coins: int
-        :rtype: int
-        """
+def maxIceCream(costs, coins):
         freq = [0] * 100001
 
         for cost in costs:
