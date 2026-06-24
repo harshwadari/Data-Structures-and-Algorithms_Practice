@@ -1,5 +1,5 @@
 # Generate Subsequence with sum equal to k 
-#  brut approach us using by generating all subsequence and calculating result 
+#  brut approach is by generating all the subsequence and check sum before appending into result  
 # TC = O( N *2^N) and SC = O(N)
 def subsets(nums:list[int],target:int) -> list[list[int]]:
     result = []
@@ -19,8 +19,8 @@ def subsets(nums:list[int],target:int) -> list[list[int]]:
     return len(result)
 
 
-# Optimal appraoch using recursive backtracking 
-"""
+# Optimal appraoch using recursive backtracking
+""" 
 class Solution:
 	def perfectSum(self, arr, target):
 		# code here

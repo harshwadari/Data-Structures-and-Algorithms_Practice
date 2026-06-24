@@ -1,4 +1,4 @@
-# 78. Subsets
+# 78. Subsets / Print all subsequences of given array 
 
 """
 Given an integer array nums of unique elements, return all possible subsets (the power set).
@@ -19,17 +19,17 @@ Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
 def subsets(nums:list[int]) -> list[list[int]]:
     result = []
-    def solver(idx, subset):
+    def backtrack(idx: int, subset:list[int]) -> None:
         if idx >= len(nums):
             result.append(subset[:])
             return 
         #pick
         subset.append(nums[idx])
-        solver(idx + 1,subset)
+        backtrack(idx + 1,subset)
         # not pick 
         subset.pop()
-        solver(idx + 1, subset)
-    solver(0,[])
+        backtrack(idx + 1, subset)
+    backtrack(0,[])
     return result
     
 
