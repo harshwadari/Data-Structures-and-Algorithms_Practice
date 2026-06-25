@@ -16,24 +16,21 @@ def subsets(nums:list[int],target:int) -> list[list[int]]:
         subset.pop()
         solver(idx + 1, subset)
     solver(0,[])
-    return len(result)
+    return result
 
 
 # Optimal appraoch using recursive backtracking
-""" 
-class Solution:
-	def perfectSum(self, arr, target):
-		# code here
-		result = []
-		def solver(idx,total,subset):
-		    if idx >= len(arr):
-		        if total == target:
-		            result.append(subset[:])
-		        return
-		    subset.append(arr[idx])
-		    solver(idx + 1,total + arr[idx] ,subset)
-		    subset.pop()
-		    solver(idx + 1,total ,subset)
-		solver(0,0,[])
-		return len(result)
-"""
+# TC = O(2^N) and SC = O(N) stack space
+def subsequence(arr: list[int], target:int) ->int:
+    result = []
+    def backtrack(index,total,subset):
+        if index >= len(arr):
+            if total == target:
+                result.append(subset[:])
+            return 
+        subset.append(arr[index])
+        backtrack(index + 1,total + arr[index],subset)
+        subset.pop()
+        backtrack(index + 1,total,subset)
+    backtrack(0,0,[])
+    return result

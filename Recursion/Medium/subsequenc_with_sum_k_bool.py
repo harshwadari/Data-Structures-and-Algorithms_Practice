@@ -1,15 +1,18 @@
-class Solution:
-    def checkSubsequenceSum(self, arr, k):
+# Check it there exists a subsequence with sum = k
 
-        def backtrack(idx, total):
-            if idx >= len(arr):
-                return total == k
 
-            # pick
-            if backtrack(idx + 1, total + arr[idx]):
+
+
+# TC = O(2^N) and SC = O(N) stack space
+def checkSubsequenceSum(self, arr, k):
+    def backtrack(idx, total):
+        if idx >= len(arr):
+            if total == k:
                 return True
-
-            # not pick
-            return backtrack(idx + 1, total)
-
-        return backtrack(0, 0)
+            return False
+        # pick
+        if backtrack(idx + 1, total + arr[idx]):
+            return True
+        # not pick
+        return backtrack(idx + 1, total)
+    return backtrack(0, 0)
