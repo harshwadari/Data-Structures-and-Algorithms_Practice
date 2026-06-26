@@ -29,8 +29,10 @@ def subsequence(arr: list[int], target:int) ->int:
                 result.append(subset[:])
             return 
         subset.append(arr[index])
-        backtrack(index + 1,total + arr[index],subset)
+        total += arr[index]
+        backtrack(index + 1,total,subset)
         subset.pop()
+        total -= arr[index]
         backtrack(index + 1,total,subset)
     backtrack(0,0,[])
     return result

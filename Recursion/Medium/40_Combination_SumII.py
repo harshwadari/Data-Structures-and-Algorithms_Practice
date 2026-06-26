@@ -48,3 +48,28 @@ def combinationSum2(self, candidates, target):
     for comb in result:
         ans.append(list(comb))
     return ans
+
+
+
+
+# Optimal approach using Recursion backtracking 
+# TC = O(2^N + NlogN) and SC = O(N) where n is stack space
+def combine(nums,target):
+    nums.sort()
+    result = []
+    def backtrack(index,total,subset):
+        if total == target:
+            result.append(subset[:])
+            return
+        if total > target:
+            return
+        for i in range(index,len(nums)):
+            if i > index and nums[i] == nums[i - 1]:
+                continue
+            if total + nums[i] > target:
+                break
+            subset.append(nums[i])
+            backtrack(i+1,total + nums[i] , subset)
+            subset.pop()
+        backtrack(0,0,[])
+        return result 

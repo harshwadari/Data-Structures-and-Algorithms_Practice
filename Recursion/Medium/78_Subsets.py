@@ -15,7 +15,35 @@ Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
 
 # Optimal Approach using Recursion Backtracking 
-# TC = O(2^N) where N is len(arr) and SC = O(N) where N is stackspace
+"""
+
+Time Complexity: O(n × 2ⁿ)
+Why?
+
+There are 2 choices for every element:
+
+Pick
+Not Pick
+
+So the recursion tree has:
+
+2^n leaf nodes
+
+At every leaf, you execute:
+
+result.append(subset[:])
+
+Copying subset[:] takes O(n) in the worst case.
+
+So:
+
+Number of subsets × Time to copy each subset
+= 2^n × O(n)
+= O(n × 2^n)
+Time Complexity: O(n × 2^n) because there are 2^n subsets and copying each subset takes up to O(n).
+Auxiliary Space: O(n) due to the recursion stack and the current subset.
+Space Including Output: O(n × 2^n) because all subsets are stored.
+"""
 
 def subsets(nums:list[int]) -> list[list[int]]:
     result = []
