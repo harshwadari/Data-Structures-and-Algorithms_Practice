@@ -26,7 +26,7 @@
 def rota1(nums,k):
     n  = len(nums)
     k = k%n
-    def reve(nums,left,right):
+    def reve(left,right):
         while left < right:
             nums[left], nums[right] = nums[right], nums[left]
             left +=1

@@ -32,3 +32,24 @@ Constraints:
 
 1 <= n <= 1015
 """
+
+# Optimal approach using math fucntion
+"""
+Python internally uses binary exponentiation (fast exponentiation), so the time complexity is:
+
+pow(5, even, MOD) → O(log even)
+pow(4, odd, MOD) → O(log odd)
+
+Overall:
+
+Time: O(log n)
+Space: O(1) (ignoring recursion stack because Python's implementation is iterative)
+
+It is not O(1).
+"""
+def countGoodNumbers(self, n):
+    mod = 10 ** 9 + 7
+    odd = n // 2
+    even = (n + 1) // 2
+    return pow(5,even,mod) * pow(4,odd,mod) % mod
+    
