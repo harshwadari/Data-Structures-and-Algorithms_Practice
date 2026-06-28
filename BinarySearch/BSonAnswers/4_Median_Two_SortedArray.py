@@ -17,7 +17,7 @@ Explanation: merged array = [1,2,3] and median is 2.
 
 
 # exteme Niave approach 
-# TC = O(N + M) and SC = O(N + M )
+# TC = O((n + m) log(n + m)) and SC = O(N + M )
 def medianOf2(self, a, b):
         # code here
         result = a + b
