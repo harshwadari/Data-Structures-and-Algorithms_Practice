@@ -13,13 +13,15 @@ def fibb(n):
 # better appraoch using db memoizatioin 
 # TC = O(N) and SC = O(N) + O(N)
 def dpfib(n,dp):
-    if  n <= 1:
-        return n
-    if dp[n] != -1:
+    dp = [-1] * (n + 1)
+    def solve():
+        if  n <= 1:
+            return n
+        if dp[n] != -1:
+            return dp[n]
+        dp[n] = dpfib(n-1) + dpfib(n -2)
         return dp[n]
-    dp[n] = dpfib(n-1) + dpfib(n -2)
-    return dp[n]
-
+    return solve(n)
 
 # Tabulation bottom up approach 
 # TC = O(N) and SC = O(N)
@@ -46,5 +48,4 @@ def spacefib(n):
         prev2 = prev1
         prev1 = curr
     return prev1
-
 

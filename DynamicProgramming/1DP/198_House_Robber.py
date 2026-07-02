@@ -33,7 +33,7 @@ Constraints:
 
 # Recursive approach 
 # TC = (2^N) and SC = O(N)
-def rob(self, nums):
+def rob(nums):
         n = len(nums)
         def backtrack(index):
             if index == 0:
