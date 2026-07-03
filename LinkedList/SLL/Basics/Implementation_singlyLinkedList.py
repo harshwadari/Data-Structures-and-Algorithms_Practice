@@ -38,7 +38,7 @@ head = insert_at_head(head, x)
 # print linked list
 temp = head
 while temp:
-    print(temp.val, end=" ")
+    print(temp.val, end=" ")      
     temp = temp.next
 
 
