@@ -1,20 +1,23 @@
-# level order traversal ( bread first Search)
-from collections import deque
-# TC = O(N) and SC = O(N)
-def levelorder(self,root):
-    if not root:
-        return []
-    queue = deque([])
-    result = []
-    queue.append(root)
-    while queue:
-        level = []
-        for _ in range(len(queue)):
+# A binary tree Node
+# class Node:
+#     def __init__(self, val):
+#         self.data = val
+#         self.left = None
+#         self.right = None
+
+# TC = O(N) where N is  number of nodes and SC = O(N) result space 
+from queue import deque
+class Solution:
+    def levelOrder(self, root):
+        # code here
+        result = []
+        queue = deque([])
+        queue.append(root)
+        while len(queue) != 0:
             e = queue.popleft()
-            level.append(e.val)
+            result.append(e.data)
             if e.left:
                 queue.append(e.left)
             if e.right:
                 queue.append(e.right)
-        result.append(level)
-    return result
+        return result

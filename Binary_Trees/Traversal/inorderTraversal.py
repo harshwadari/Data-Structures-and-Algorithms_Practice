@@ -2,6 +2,7 @@
 # Inorder works by Left - Root - Right 
 # TC = O(N) and SC = O(H) where h is height of tree
 
+# Inorder means root is in (in) position 
 def inorder(self,root):
     if root == None:
         return []

@@ -29,8 +29,7 @@ eight.right = six
 
 
 # preorder travesal 
-
-
+# Preorder Means root comes first and left and right 
 def preOrder_traversal(node):
     if node == None:
         return 
@@ -53,4 +52,21 @@ def preorder_traversal(self,root):
     result.append(root.val)
     result += self.preorder_traversal(root.left)
     result += self.preorder_traversal(root.right)
+    return result
+
+
+# Iterative approach 
+
+def preorderTraversal(self, root):
+    if root == None:
+        return []
+    result = []
+    stack = [root]
+    while stack :
+        node = stack.pop()
+        result.append(node.val)
+        if node.right != None:
+            stack.append(node.right)
+        if node.left != None:
+            stack.append(node.left)
     return result

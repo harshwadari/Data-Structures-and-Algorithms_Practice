@@ -27,3 +27,14 @@ print(hot.right.val)
 
 
 
+"""
+Tree Traversal
+1. Depth  First Search :
+   Inorder   
+   Preorder 
+   Postorder 
+
+2. Breadth First Search:
+    Levelorder 
+
+"""
