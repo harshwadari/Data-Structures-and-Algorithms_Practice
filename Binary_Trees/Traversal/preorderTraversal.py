@@ -69,4 +69,4 @@ def preorderTraversal(self, root):
             stack.append(node.right)
         if node.left != None:
             stack.append(node.left)
-    return result
+    return result 

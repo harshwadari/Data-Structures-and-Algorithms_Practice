@@ -34,7 +34,7 @@ class Solution(object):
         def maxsum(root):
             if root == None:
                 return 0
-            leftsum = maxsum(root.left)
+            leftsum:int = maxsum(root.left)
             if leftsum < 0:
                 leftsum = 0
             rightsum = maxsum(root.right)

@@ -24,3 +24,15 @@ def zero1(nums):
     zero_count = n- len(temp)
     for i in range(n):
         temp.append(0)
+
+# Optimal approach using two pointer
+# TC = O(N) and SC = O(1)
+def moveZeroesnums (nums:list[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        i = 0
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                nums[i] , nums[j] = nums[j] , nums[i]
+                i += 1
