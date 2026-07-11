@@ -28,7 +28,7 @@ def dfs(self,i,j,grid,rows,cols):
     self.dfs(i, j - 1, grid, rows, cols)
     self.dfs(i, j + 1, grid, rows, cols)
 def numEnclaves(self, grid):
-    rows = len(grid)
+    rows = len(grid) 
     cols = len(grid[0])
     for i in range(rows):
         for j  in range(cols):
