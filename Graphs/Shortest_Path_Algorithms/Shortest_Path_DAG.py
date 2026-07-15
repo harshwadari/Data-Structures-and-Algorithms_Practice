@@ -20,3 +20,52 @@ is 0->4->2 with edge weight 1+2=3. Shortest path from 0 to 3 is 0->4->5->3 with 
 1+4+1=6. Shortest path from 0 to 4 is 0->4 with edge weight 1.Shortest path from 0 to 5 is 
 0->4->5 with edge weight 1+4=5.
 """ 
+
+# DFS Appraoch 
+
+from typing import List
+from collections import deque
+class Solution:
+    def dfs(self,node,stack,adjlist,visited):
+        visited[node] = 1
+        for adjnode, dis in adjlist[node]:
+            if visited[adjnode] == 0:
+                self.dfs(adjnode,stack,adjlist,visited)
+        stack.append(node)
+    def shortestPath(self, V: int, E: int,edges: List[List[int]]) -> List[int]:
+        adjlist = [[] for _ in range(V)]
+        for u,v,d in edges:
+            adjlist[u].append([v,d])
+        distance = [float('inf')] * V
+        visited = [0] * V
+        stack = []
+        for i in range(V):
+            if visited[i] == 0:
+                self.dfs(i,stack,adjlist,visited)
+        distance[0] = 0
+        while len(stack) != 0:
+            node = stack.pop()
+            dist = distance[node]
+            for adjnode , d in adjlist[node]:
+                newd = dist + d
+                if newd < distance[adjnode]:
+                    distance[adjnode] = newd
+        for i in range(V):
+            if distance[i] == float('inf'):
+                distance[i] = -1
+        return distance
+                
+                
+                
+    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
