@@ -19,7 +19,7 @@ Example 1:
 Input: grid = [[0,1],[1,0]]
 Output: 2
 """
-
+from collections import deque
 class Solution(object):
     def shortestPathBinaryMatrix(self, grid):
         """
