@@ -77,7 +77,7 @@ print(OnetoN(10))
 
 
 
-# sum of first N using recursion
+# sum of first N using recursion funtional recursion                              
 
 def sumN(n):
     if n == 0:
