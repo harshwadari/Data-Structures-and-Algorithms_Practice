@@ -12,6 +12,67 @@ queen and an empty space, respectively.
  
 """
 
+
+# Brute Solution 
+# TC = O(N! * N) and SC = O(N^2 + N)
+class Solution(object):
+    def isValid(self,row,col,grid,n):
+        duprow = row
+        dupcol = col
+        while row >=0 and col >= 0:
+            if grid[row][col] == "Q":
+                return False
+            row -= 1
+            col -= 1
+        row = duprow
+        col = dupcol
+        while col >= 0:
+            if grid[row][col] == 'Q':
+                return False
+            col -= 1
+        row = duprow
+        col = dupcol
+        while row < n and col >= 0:
+            if grid[row][col] == 'Q':
+                return False
+            row += 1
+            col -= 1
+        return True
+    def backtrack(self,col,result,grid,n):
+        if col == n:
+            result.append(list(grid))
+            return
+        for row in range(n):
+            if self.isValid(row,col,grid,n):
+                grid[row] = grid[row][:col] + "Q" + grid[row][col + 1:]
+                self.backtrack(col+1,result,grid,n)
+                grid[row] = grid[row][:col] + "." + grid[row][col+1:]
+
+    def solveNQueens(self, n):
+        """
+        :type n: int
+        :rtype: List[List[str]]
+        """
+        result = []
+        grid = ['.' * n for _ in range(n)]
+        rows = len(grid)
+        cols = len(grid[0])
+        self.backtrack(0,result,grid,n)
+        return result
+    
+
+
+
+
+
+
+
+
+
+
+# Optimal Appraoch using hashing 
+# TC = O(N!) and SC = O(N) stack space + O(N^2) grid creation  + O(3N) hash creation 
+
 class Solution(object):
     def backtrack(self,col,board,ans,leftrow,upperdiagonal,lowerdiagonal,n):
         if col == n:
