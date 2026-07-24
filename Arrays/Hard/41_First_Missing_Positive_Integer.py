@@ -36,11 +36,11 @@ def positiveInt(nums):
     nums.sort()
     expected = 1
     for num in nums:
-        if num < nums:
+        if num < expected:
             continue
-        elif num == nums:
+        elif num == expected:
             expected += 1
-        elif num > nums:
+        else:
             return expected
     return expected
 

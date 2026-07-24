@@ -9,7 +9,8 @@ Example 2:
 Input: digits = "2"
 Output: ["a","b","c"]
 """
-# TC = O(N *4^N) and SC = O(N) stack space
+# Optimal Approach using RRecursion Backtracking 
+# TC = O(N *4^N) and SC = O(N) stack space + O(N) result arr space
 def letterCombinations(self, digits):
     char = {
     "2":"abc",

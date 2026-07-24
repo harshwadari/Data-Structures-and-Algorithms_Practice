@@ -43,3 +43,20 @@ def container(nums):
             water = height * width
             maxWater = max(maxWater , water)
     return maxWater 
+
+# Optimal Approach using Two Pointer
+# TC =O(N) and SC = O(1)
+def containerWater(height:list[int]) -> int:
+    left = 0 
+    right = len(height) - 1
+    maxArea = 0
+    while left < right:
+        ht = min(height[left],height[right])
+        width = right - left
+        area = ht * width 
+        maxArea = max(area,maxArea)
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return maxArea
