@@ -7,9 +7,10 @@ class Solution:
         def dfshelper(node):
             visited[node] = 1
             result.append(node)
-            for m in adj[node]:
-                if not visited[m]:
-                    dfshelper(m)
+            for adjnode in adj[node]:
+                if visited[adjnode] == 0:
+                    visited[adjnode] = 1
+                    dfshelper(adjnode)
         dfshelper(0)
         return result
 
