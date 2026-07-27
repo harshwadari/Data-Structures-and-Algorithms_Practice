@@ -78,7 +78,7 @@ def dfsConnected(V,edges):
     adjlist = [[] for _ in range(V)]
     for u,v in edges:
         adjlist[u].append(v)
-        adjlist[v].append(v)
+        adjlist[v].append(u)
     visited = [0] * V
     count = 0
     def dfs(node):
@@ -91,3 +91,59 @@ def dfsConnected(V,edges):
             count += 1
             dfs(i)
     return count - 1
+
+
+
+
+
+
+# Optimal Solution using DSU
+
+class Disjoint:
+    def __init__(self, n):
+        self.parent = [i for i in range(n + 1)]
+        self.rank = [0] * (n + 1)
+
+    def find(self, node):
+        if node == self.parent[node]:
+            return node
+
+        self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+
+    def union(self, u, v):
+        pu = self.find(u)
+        pv = self.find(v)
+
+        if pu == pv:
+            return False
+
+        if self.rank[pu] < self.rank[pv]:
+            self.parent[pu] = pv
+
+        elif self.rank[pu] > self.rank[pv]:
+            self.parent[pv] = pu
+
+        else:
+            self.parent[pv] = pu
+            self.rank[pu] += 1
+        return True
+
+class Solution(object):
+    def makeConnected(self, n, connections):
+        """
+        :type n: int
+        :type connections: List[List[int]]
+        :rtype: int
+        """
+        ds = Disjoint(n)
+        edges = 0
+        for u,v in connections:
+            ds.union(u,v)
+        components = 0
+        for i in range(n):
+            if ds.find(i) == i:
+                components += 1
+        if len(connections) < n-1:
+            return -1
+        return components - 1
