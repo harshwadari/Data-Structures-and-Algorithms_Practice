@@ -11,6 +11,35 @@ Output: [00, 01, 10, 11]
 Explanation: As each position can be either 0 or 1, the total possible combinations are 4.
 """
 
+
+"""
+Recursion Tree
+
+                                      backtrack(0, "")
+                                             |
+                          -----------------------------------
+                          |                                 |
+                     append '0'                        append '1'
+                          |                                 |
+                  backtrack(1, "0")                backtrack(1, "1")
+                          |                                 |
+                -------------------                 -------------------
+                |                 |                 |                 |
+          append '0'        append '1'       append '0'        append '1'
+                |                 |                 |                 |
+      backtrack(2,"00")   backtrack(2,"01") backtrack(2,"10") backtrack(2,"11")
+                |                 |                 |                 |
+          -----------       -----------       -----------       -----------
+          |         |       |         |       |         |       |         |
+       add0      add1    add0      add1    add0      add1    add0      add1
+          |         |       |         |       |         |       |         |
+ backtrack(3,"000") backtrack(3,"001") ...  ...  ...  ...  ...  ...
+          |         |       |         |       |         |       |         |
+      append     append   append   append  append   append  append   append
+        000        001      010      011     100      101     110      111
+
+
+"""
 # Optimal approach using recursion backtracking
 # TC = O(2^N) and SC = O(N)
 def binstring(n: int) -> list[str]:
@@ -29,7 +58,7 @@ def binstring(n: int) -> list[str]:
     return result
 
 
-#Binay String for consecutive 1's
+#Binay String for without consecutive 1's
 # TC = O(2^N) and SC = O(N)
 def generateBinaryStrings(self, n):
     ans = []
