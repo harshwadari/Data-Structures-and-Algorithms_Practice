@@ -24,7 +24,35 @@ cold.right = fanta
 print(drinks.right.left.val)
 print(hot.right.val)
 
+"""
+                drinks
+               /      \
+            hot        cold
+           /   \      /    \
+         tea  coffee cola  fanta
 
+Root: drinks
+
+Left Subtree:
+    hot
+   /   \
+ tea   coffee
+
+Right Subtree:
+    cold
+   /    \
+ cola   fanta
+
+
+Connections:
+drinks
+├── hot
+│   ├── tea
+│   └── coffee
+└── cold
+    ├── cola
+    └── fanta
+"""
 
 
 """

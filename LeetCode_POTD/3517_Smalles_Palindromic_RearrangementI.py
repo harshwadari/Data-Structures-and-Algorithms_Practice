@@ -81,4 +81,4 @@ def palindrome(s:str) -> str:
             middle = char
     left = "".join(left)
     return left + middle + left[::-1]
-    
+             

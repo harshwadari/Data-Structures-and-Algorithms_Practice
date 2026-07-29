@@ -53,7 +53,7 @@ class Solution(object):
             string.append('1')
             backtrack(index + 1, string)
             string.pop()
-            # Place 1 only if previous is not 1
+            # Place 0 only if previous is not 0
             if len(string) == 0 or string[-1] != '0':
                 string.append('0')
                 backtrack(index + 1, string)
