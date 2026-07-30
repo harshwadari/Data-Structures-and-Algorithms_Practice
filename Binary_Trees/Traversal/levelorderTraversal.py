@@ -11,7 +11,7 @@ class Solution:
     def levelOrder(self, root):
         # code here
         result = []
-        queue = deque([])
+        queue = deque()
         queue.append(root)
         while len(queue) != 0:
             e = queue.popleft()
@@ -20,4 +20,29 @@ class Solution:
                 queue.append(e.left)
             if e.right:
                 queue.append(e.right)
+        return result
+
+
+# LC Approach 
+class Solution(object):
+    def levelOrder(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: List[List[int]]
+        """
+        if not root:
+            return []
+        queue = deque([])
+        result = []
+        queue.append(root)
+        while queue:
+            level = []
+            for _ in range(len(queue)):
+                e  = queue.popleft()
+                level.append(e.val)
+                if e.left:
+                    queue.append(e.left)
+                if e.right:
+                    queue.append(e.right)
+            result.append(level)
         return result
