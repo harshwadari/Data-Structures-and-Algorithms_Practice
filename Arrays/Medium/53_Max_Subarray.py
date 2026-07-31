@@ -43,7 +43,7 @@ def kadanee(nums):
     for i in range(n):
         sum += nums[i]
         maxsum = max(maxsum,sum)
-        if sum <0:
+        if sum < 0:
             sum = 0
     return maxsum
 

@@ -33,7 +33,7 @@ def countfreq(nums:list[int]) ->list[int]:
     result = []
     for key , value in freq.items():
         result.append((key,value))
-    return result,freq
+    return freq
 print(countfreq([5,3,7,8,8,8,9,1]))
 
 # return most/ highest occuring element in array
