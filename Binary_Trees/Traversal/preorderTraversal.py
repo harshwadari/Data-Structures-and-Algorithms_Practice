@@ -57,7 +57,7 @@ def preorder_traversal(self,root):
 
 # Iterative approach 
 
-def preorderTraversal(self, root):
+def preorderTraversal(root):
     if root == None:
         return []
     result = []

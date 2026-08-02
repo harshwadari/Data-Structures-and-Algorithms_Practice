@@ -10,6 +10,9 @@ def postorder(self,root):
     result.append(root.val)
     return result
 
+
+
+
 # Iterative approach 
 class Solution(object):
     def postorderTraversal(self, root):

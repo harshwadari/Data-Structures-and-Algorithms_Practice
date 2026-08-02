@@ -40,6 +40,8 @@ root is a valid binary search tree.
 
 Follow up: Could you solve it with time complexity O(height of tree)?
 """
+
+
 """
 Overall TC = O(h)
 Balanced BST: O(log n)
