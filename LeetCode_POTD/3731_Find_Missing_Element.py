@@ -63,3 +63,28 @@ def missing(nums:list[int]) -> list[int]:
         if i not in lookup: #TC = O(1)
             result.append(i) # O(1)
     return result
+
+# Better Appraoch 
+# TC = O(N ^ 2) and SC = O(N)
+class Solution(object):
+    def findMaxLength(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        maxlen = 0
+        for i in range(len(nums)):
+            zero = 0
+            one = 0
+            for j in range(i,len(nums)):
+                if nums[j] == 1:
+                    one += 1
+                else:
+                    zero += 1
+                if zero == one:
+                    length = j - i + 1
+                    maxlen = max(maxlen,length)
+        return maxlen 
+
+
+# Optimal Appraoch using Prefix Sum 

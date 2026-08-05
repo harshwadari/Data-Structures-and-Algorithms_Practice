@@ -18,6 +18,18 @@ Output: 2
 
 """
 
+# Extreme Naive Solution 
+# TC = O(N ^ 3) and SC = O(1)
+def subarraynaive(nums:list[int],k:int) -> int:
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i,len(nums)):
+            total = 0
+            for m in range(i,j+1):
+                total += nums[m]
+            if total == k:
+                count += 1
+    return count
 
 # brut force approach by finding all subbaray using nested for loops
 # TC = O(N^2) and SC = O(1)
@@ -33,7 +45,7 @@ def subarraysum(nums,k):
     return count
 
 
-
+# Subarray Sum = Current Prefix Sum − Previous Prefix Sum
 # optimal approach using prefix sum and hashing
 # TC = O(N) and SC = O(N)
 def countsubarraySum(nums,k):
