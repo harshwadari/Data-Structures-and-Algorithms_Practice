@@ -92,4 +92,4 @@ def array(nums):
             maxlen = max(maxlen,length)
         else:
             prefix[current_sum] = i
-    return maxlen 
+    return maxlen       
