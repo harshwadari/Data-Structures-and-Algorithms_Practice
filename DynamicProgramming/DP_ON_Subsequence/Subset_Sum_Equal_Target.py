@@ -42,3 +42,90 @@ class Solution:
             else:
                 return False
         return backtrack(len(arr) - 1,sum)
+
+
+# Memoization Approach 
+# TC = O(N * sum) and SC = O(N) dp array  + O(N) stack space
+
+class Solution:
+    def isSubsetSum(self, arr: list[int], sum: int) -> bool:
+        n = len(arr)
+        dp = [[-1 for _ in range(sum+1)] for _ in range(n)]
+        # code here
+        def backtrack(index,total):
+            if total == 0:
+                return True
+            if index == 0:
+                if arr[0] == total:
+                    return True
+                return False
+            if dp[index][total] != -1:
+                return dp[index][total]
+            if arr[index] > total:
+                pick = False
+            else:
+                pick = backtrack(index - 1,total-arr[index])
+            notpick = backtrack(index - 1,total)
+            dp[index][total] = pick or notpick
+            return dp[index][total]
+        return backtrack(len(arr)-1,sum)
+
+
+
+# Tabulation Approach 
+# TC = O(N * sum) and SC = O(N * sum)
+class Solution:
+    def isSubsetSum(self, arr, target):
+        n = len(arr)
+
+        dp = [[-1] * (target + 1) for _ in range(n)]
+
+        # Base case
+        for i in range(n):
+            dp[i][0] = True
+
+        if arr[0] <= target:
+            dp[0][arr[0]] = True
+
+        # Fill DP table
+        for index in range(1, n):
+            for total in range(1, target + 1):
+                if arr[index] > total:
+                    pick = False
+                else:
+                    pick = dp[index-1][total - arr[index]]
+                notpick = dp[index - 1][total]
+                dp[index][total] = pick or notpick
+        return dp[n-1][target]
+
+
+
+
+# Tabulation With Space Optimization 
+# TC = O(N * Target) and SC = O(target)
+class Solution:
+    def isSubsetSum(self, arr, target):
+        n = len(arr)
+
+        prev = [False] * (target + 1)
+        prev[0] = True
+
+        if arr[0] <= target:
+            prev[arr[0]] = True
+
+        for i in range(1, n):
+            curr = [False] * (target + 1)
+            curr[0] = True
+
+            for j in range(1, target + 1):
+                notPick = prev[j]
+
+                pick = False
+                if arr[i] <= j:
+                    pick = prev[j - arr[i]]
+
+                curr[j] = pick or notPick
+
+            prev = curr
+
+        return prev[target]
