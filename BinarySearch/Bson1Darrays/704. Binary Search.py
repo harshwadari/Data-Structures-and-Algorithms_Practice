@@ -25,4 +25,43 @@ def bs(nums,target):
         else:
             high = mid-1
     return -1
-print(bs([1,2,3,4,5,6,7,8,9],6))
+
+# This if for single test cases in OA
+def main():
+    n = int(input())
+    nums = list(map(int,input().split()))
+    target = int(input())
+    print(bs(nums,target))
+if __name__ == '__main__':
+    main()
+
+
+# For Multiple Test case 
+def main():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        nums = list(map(int,input().split()))
+        target = int(input())
+        print(bs(nums,target))
+if __name__ == "__main__":
+    main()
+
+
+
+# Binary Search Using Recursion 
+# TC = O(logN) and SC = O(logN) stack space 
+def recursionBS(nums, target, low, high):
+    if low > high:
+        return -1
+
+    mid = (low + high) // 2
+
+    if nums[mid] == target:
+        return mid
+
+    elif nums[mid] < target:
+        return bs(nums, target, mid + 1, high)
+
+    else:
+        return bs(nums, target, low, mid - 1)

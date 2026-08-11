@@ -109,8 +109,23 @@ def Tabupartition(nums:list[int]) -> bool:
 # Tabulation with Sapce Optimaization
 # TC = O(N * Target ) and SC = O(Target)
 def SpacePartition(nums:list[int]) -> bool:
+    n = len(nums)
     k = sum(nums)
     if k % 2 == 1:
         return False
     target = k // 2
-    
+    prev = [False] * (target + 1)
+    prev[0] = True
+    if nums[0] <= target:
+        prev[nums[0]] = True
+    for index in range(1,n):
+        curr = [False] * (target + 1)
+        for total in range(1,target + 1):
+            if nums[index] > total:
+                pick = False
+            else:
+                pick = prev[total - nums[index]]
+            notpick = prev[total]
+            curr[total] = pick or notpick
+        prev = curr
+    return prev
