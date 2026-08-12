@@ -14,7 +14,7 @@ mark all rows and cols of zero element with infinity
 and then make infinity to zero
 """
 
-# TC = O((mn)(m+n)) and SC = O(1)
+# TC = O((m*n)(m+n))+(m*n) and SC = O(1)
 class Solution(object):
     def mark(self,matrix,rows,cols):
         r = len(matrix)
