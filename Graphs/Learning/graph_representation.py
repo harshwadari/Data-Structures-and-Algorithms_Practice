@@ -1,6 +1,7 @@
 """
 first we will learn how to store a graph in memory.
-we will learn about two common ways to represent a graph in memory: adjacency list and adjacency matrix.
+we will learn about two common ways to represent a graph in memory: adjacency 
+list and adjacency matrix.
 """
 
 # adjacency matrix 
