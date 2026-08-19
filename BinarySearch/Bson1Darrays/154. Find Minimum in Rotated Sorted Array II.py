@@ -4,6 +4,23 @@
 dubplicates so we will shrink when low mid high are same thats it
 """
 
+# Brute Approach using linear search and find minimum
+# TC = O(N) and SC = O(1)
+
+def brutefindMin(nums:list[int]) -> int:
+    ans = nums[0]
+    for i in range(len(nums)):
+        if nums[i] < ans:
+            ans = nums[i]
+    return ans 
+
+
+
+# Better Appraoch using min() Inbuilt function
+# TC = O(N) and SC = O(1)
+def betterFindMin(nums:list[int])  -> int:
+    return min(nums)
+
 # optimal apprach using binary search
 # TC = O(logN) and SC = O(1)
 
