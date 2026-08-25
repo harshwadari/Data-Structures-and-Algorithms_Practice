@@ -77,7 +77,7 @@ def atmostoddfreq(s:str,k:int) -> int:
 def main():
     t = int(input())
 
-    for _ in range(t):
+    for _ in range(t):           
         s = input().strip()
         k = int(input())
 

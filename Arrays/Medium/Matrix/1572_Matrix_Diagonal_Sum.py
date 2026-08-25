@@ -53,7 +53,7 @@ def diagonalSum(mat:list[list[int]]) ->int:
 
 
 # Optimal Appraoch using only rows
-# TC = O(N) and SC = O(1)
+# TC = O(N) and SC = O(1)      
 def optimalDiagonalSum(mat:list[list[int]]) -> int:
     ans = 0
     n = len(mat)
