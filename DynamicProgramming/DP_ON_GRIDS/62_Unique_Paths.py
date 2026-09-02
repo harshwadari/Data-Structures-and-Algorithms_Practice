@@ -63,7 +63,7 @@ print(memoPaths(3,7))
 # Tabulation Appraoch
 # TC = O(M*N) and SC = O(M*N)
 
-def uniquePaths(self, m, n):
+def uniquePaths (m, n):
     dp = [[0 for _ in range(n)] for _ in range(m)]
     for i in range(m):
         for j in range(n):

@@ -71,3 +71,38 @@ def oddEvenList(head):
         temp = temp.next
 
     return head
+
+
+
+
+
+
+
+
+# using array way 
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def oddEvenList( head ):
+        arr = []
+        temp = head
+        while temp is not None:
+            arr.append(temp.val)
+            temp = temp.next
+        evenarr = []
+        oddarr = []
+        for i in range(0,len(arr),2):
+            evenarr.append(arr[i])
+        for i  in range(1,len(arr),2):
+            oddarr.append(arr[i])
+        result = evenarr + oddarr
+        dummy = ListNode(0)
+        temp = dummy
+        for i in range(len(result)):
+            temp.next = ListNode(result[i])
+            temp = temp.next
+        return dummy.next
