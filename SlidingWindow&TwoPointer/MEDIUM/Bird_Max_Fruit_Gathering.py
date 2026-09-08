@@ -84,7 +84,6 @@ class Solution:
         for right in range(m, n + m - 1):
             total += arr[right % n]
             total -= arr[(right - m) % n]
-    
             ans = max(ans, total)
     
         return ans
