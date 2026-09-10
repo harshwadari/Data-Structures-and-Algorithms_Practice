@@ -28,7 +28,7 @@ def linearsqrt(n):
 def bsSqrt(n):
     low = 1
     high = n
-    result = 1
+    result = 0
     while low <= high:
         mid = (low + high) // 2
         if mid * mid > n :
