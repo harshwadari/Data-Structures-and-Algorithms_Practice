@@ -36,25 +36,16 @@ print(anagram("cat","atc"))
 
 
 # optimal approach using dictionary
-# TC = O(3N) and SC = O(N)/
+# TC = O(2N) and SC = O(26) ~ O(1)
 
 def validAnagaram(s,t):
     if len(s) != len(t):
         return False
-    map = {}
+    freq = [0] * 26
     for i in range(len(s)):
-        char = s[i]
-        if char in map:
-            map[char] +=1
-        else:
-            map[char] =1
-    for i in range(len(t)):
-        char = t[i]
-        if char not in map:
-            return False
-        else:
-            map[char]-=1
-    for char in map:
-        if map[char] !=0:
+        freq[ord(s[i]) - ord('a')] += 1
+        freq[ord(t[i] - ord('a'))] -= 1
+    for num in freq:
+        if num != 0:
             return False
     return True
