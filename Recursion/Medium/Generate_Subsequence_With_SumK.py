@@ -20,7 +20,7 @@ def subsets(nums:list[int],target:int) -> list[list[int]]:
 
 
 # Optimal appraoch using recursive backtracking
-# TC = O(2^N) and SC = O(N) stack space
+# TC = O(N * 2^N) and SC = O(N) stack space
 def subsequence(arr: list[int], target:int) ->int:
     result = []
     def backtrack(index,total,subset):
