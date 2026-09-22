@@ -2,6 +2,7 @@
 simple funda for this
 it selects the minimum element and swaps from first 
 """
+# TC = O(N ^2) and SC = O(1)
 # two pointer approach
 def Selection_sort(nums):
     for i in range(len(nums)):
@@ -12,4 +13,3 @@ def Selection_sort(nums):
         nums[i] , nums[min_idx] = nums[min_idx],nums[i]
     return nums
 print(Selection_sort([5,4,3,2,1]))
-# time complexity is O(n^2)   and SC = O(1)

@@ -39,16 +39,38 @@ def majorityElement(self, nums):
 # TC = O(N) and SC = O(N)
 def majo(nums):
     n = len(nums)
-    map = {}
+    freq = {}
     for i in range(n):
         x = nums[i] 
-        if x in map:
-            map[x] +=1
+        if x in freq:
+            freq[x] +=1
         else:
-            map[x] = 1
-        if map[x] > n//2:
+            freq[x] = 1
+        if freq[x] > n//2:
             return x
         
+# another appraoch using sorting 
+# TC = O(N logN ) and SC = O(1)
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        count = 1
+        for i in range(1,len(nums)):
+            if nums[i] == nums[i-1]:
+                count += 1
+            else:
+                count = 1
+            if count > len(nums) // 2:
+                return nums[i]
+
+
+
+
 
 # moores voting algorithm more optimal
 # TC = O(N) and SC = O(1)
