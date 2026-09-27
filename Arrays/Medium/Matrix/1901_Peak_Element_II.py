@@ -1,28 +1,78 @@
 # 1901. Find a Peak Element II
 """
-A peak element in a 2D grid is an element that is strictly greater than all of its adjacent neighbors to the left, right, top, and bottom.
+A peak element in a 2D grid is an element that is strictly greater than all of its 
+adjacent neighbors to the left, right, top, and bottom.
 
-Given a 0-indexed m x n matrix mat where no two adjacent cells are equal, find any peak element mat[i][j] and return the length 2 array [i,j].
+Given a 0-indexed m x n matrix mat where no two adjacent cells are equal, find 
+any peak element mat[i][j] and return the length 2 array [i,j].
 
-You may assume that the entire matrix is surrounded by an outer perimeter with the value -1 in each cell.
+You may assume that the entire matrix is surrounded by an outer perimeter with 
+
+the value -1 in each cell.
 
 You must write an algorithm that runs in O(m log(n)) or O(n log(m)) time.
+
+Constraints:
+
+m == mat.length
+n == mat[i].length
+1 <= m, n <= 500
+1 <= mat[i][j] <= 105
+No two adjacent cells are equal.
 """
+
+
+
 # brute approach using linear search of matrix traversal
 # TC = O(M*N) and SC = O(1)
 def findPeakGrid(matrix : list[list[int]]) -> list[int]:
     rows = len(matrix)
     cols = len(matrix[0])
-    maxi = matrix[0][0]
-    r = 0
-    c = 0
+    peak = matrix[0][0]
+    ans = [0,0]
     for i in range(rows):
         for j in range(cols):
-            if matrix[i][j] > maxi:
-                maxi = matrix[i][j]
-                r = i
-                c = j
-    return [r,c]
+            if matrix[i][j] > peak:
+                peak = matrix[i][j]
+                ans = [i,j]
+    return ans 
+
+# clean brut force by checking all four direction 
+def is_peak(matrix, i, j):
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    # Check top
+    if i > 0 and matrix[i - 1][j] > matrix[i][j]:
+        return False
+
+    # Check bottom
+    if i < rows - 1 and matrix[i + 1][j] > matrix[i][j]:
+        return False
+
+    # Check left
+    if j > 0 and matrix[i][j - 1] > matrix[i][j]:
+        return False
+
+    # Check right
+    if j < cols - 1 and matrix[i][j + 1] > matrix[i][j]:
+        return False
+
+    return True
+
+
+def findPeakGrid(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    for i in range(rows):
+        for j in range(cols):
+            if is_peak(matrix, i, j):
+                return [i, j]
+            
+
+
+
 
 
 """

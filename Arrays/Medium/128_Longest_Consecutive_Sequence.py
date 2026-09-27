@@ -41,21 +41,48 @@ def longestconsecutive(nums):
     return max_count
 
 
-# better approach
-# TC = O(nlogN + N) and SC = O(1)
-def longest(nums):
-    nums.sort()
-    last_small = float('-inf')
-    count = 0
-    longest = 0
-    for i in range(len(nums)):
-        num = nums[i]
-        if num - 1 == last_small:
-            count +=1
-            last_small = num
-        elif num != last_small:
-            count = 1
-            last_small = num
-        longest = max(longest , count)
-    return longest
+# better approach using Sorting 
+# TC = O(NlogN + N) and SC = O(1)
+class Solution(object):
+    def longestConsecutive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) == 0:
+            return 0
+        nums.sort()
+        maxlen = 1
+        length = 1
+        for i in range(1, len(nums)):
+            if nums[i] - 1 == nums[i - 1]:
+                length += 1
+                maxlen = max(maxlen, length)
+            elif nums[i] == nums[i - 1]:
+                continue
+            else:
+                length = 1
+        return maxlen
 
+
+#Optimal Appraoch using HashSet
+# TC = O(N) and SC = O(N)
+class Solution(object):
+    def longestConsecutive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) == 0:
+            return 0
+        myset = set(nums)
+        maxlen = 1
+        for num in myset: 
+            if num - 1 not in myset:
+                length = 1
+                curr= num
+                while curr + 1 in myset:
+                    length += 1
+                    curr += 1
+                maxlen = max(maxlen,length)
+        return maxlen
