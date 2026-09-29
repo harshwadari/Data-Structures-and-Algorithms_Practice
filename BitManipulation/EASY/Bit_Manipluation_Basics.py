@@ -3,25 +3,37 @@
 # Understand binary to decimal conversion and vice versa 
 # TC O(log n)  and SC = O(log n) 
 def decimal_to_binary(n):
-    binary = ''
-    while n != 0:
-        binary = str(n % 2) + binary
-        n = n // 2
-    return binary
+    binary = []
+    while n > 0:
+        if n % 2 == 0:
+            binary.append('0')
+        else:
+            binary.append('1')
+        n = n // 10
+    binary.reverse()
+    return "".join(binary)
 print(decimal_to_binary(13))
 
 
 
 
-# TC = O(log n) and SC = O(log n)
+
+
+# TC = O(log n) and SC = O(1)
 def binary_to_decimal(binary):
     decimal = 0
     power = 0
-    for digit in binary[::-1]:
-        decimal += int(digit) * (2 ** power)
+    index = 0
+    while index >= 1:
+        decimal += int(binary[index]) * (2 ** power)
+        index -= 1
         power += 1
     return decimal
 print(binary_to_decimal('1101'))
+
+
+
+
 
 
 
@@ -32,11 +44,23 @@ def bitwiseAND(a, b):
 print(bitwiseAND(13, 7))  
 
 
+
+
+
+
+
 # bitwise OR operator in python (| works at the binary (bit) level, not logical level.)
 #TC = O(1) and SC = O(1)
 def bitwiseOR(a,b):
     return a | b
 print(bitwiseOR(13, 7))
+
+
+
+
+
+
+
 
 # bitwise XOR operator in python (^ works at the binary (bit) level, not logical level.)
 # TC = O(1) and SC = O(1)
@@ -46,6 +70,15 @@ print(bitwiseOR(13, 7))
 def bitwiseXOR(a,b):
     return a ^ b
 print(bitwiseXOR(13, 7))
+
+
+
+
+"""
+LeetCode 191 — Number of 1 Bits
+LeetCode 338 — Counting Bits
+LeetCode 190 — Reverse Bits
+"""
 
 
 # shift operators in python (>> and << works at the binary (bit) level, not logical level.)
@@ -58,12 +91,24 @@ def rightShift(a, n):
     return a >> n
 print(rightShift(13, 2))  
 
+
+
+
+
+
+
+
 # right shift operator (<< shifts the bits to the left and fills the rightmost bits with 0)
 # TC = O(1) and SC = O(1)
 # formula of left shift is a << n = a * (2 ** n)
 def leftShift(a, n):
     return a << n
 print(leftShift(13, 2))
+
+
+
+
+
 
 
 # Not operator in python (~ works at the binary (bit) level, not logical level.)

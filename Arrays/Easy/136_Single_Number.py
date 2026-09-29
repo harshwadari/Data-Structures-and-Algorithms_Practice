@@ -33,3 +33,9 @@ def single(nums):
     return 2 * sum(set(nums)) - sum(nums)
 
 # optimal approach using bit manipulation 
+# TC = O(N) and SC = O(1)
+def singlebit(nums):
+    ans = 0
+    for num in nums:
+        ans = ans ^ num
+    return ans 

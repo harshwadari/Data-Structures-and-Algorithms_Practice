@@ -5,17 +5,47 @@
 
 # TC = O(log n) and SC = O(log n)
 def set_ith_bit(n, i):
-    binary = ""
-    while n != 0:
-        binary = str(n % 2) + binary
+    binary = []
+    while n > 0:
+        if n % 2 == 0:
+            binary.append('0')
+        else:
+            binary.append('1')
         n = n // 2
-    if i < len(binary):
-        binary = binary[:-i-1] + '1' + binary[-i:]
-    else:
-        binary = '1' + '0' * (i - len(binary)) + binary
-    return int(binary, 2)
+    binary.reverse()
+    binary[i] = '1'
+    return "".join(binary)
+print(set_ith_bit(34,2))
+
+
+
+
+
+
 
 # optimal approach is to use bitwise OR operator
 # TC = O(1) and SC = O(1)
 def set_ith_bit_optimal(n, i):
+
     return n | (1 << i)
+
+
+
+
+
+# Clear ith Bit
+# TC = O(1) and SC = O(1)
+def clearkthbit(n,k):
+    return n & ~(1 << k)
+
+
+
+
+
+# Toggle the ith bit 
+# TC = O(1) and SC = O(1)
+def toggle(n,k):
+    return n ^ (1 << k)
+
+
+

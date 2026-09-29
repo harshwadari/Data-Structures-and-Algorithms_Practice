@@ -1,16 +1,19 @@
-# Count the number of set Bits
+# 191. Number of 1 Bits
 
 # extreme naive brut apparoch
 # TC = O(logn^2) and SC = O(logN)
 def countsetbit(n):
-    binary = ''
+    binary = []
+    while n > 0:
+        if n % 2 == 0:
+            binary.append('0')
+        else:
+            binary.append('1')
+        n = n // 2
     count = 0
-    while n != 0:
-        binary = str(n % 2) + binary
-        n = n //2
-    for val in binary:
-        if val == '1':
-            count +=1
+    for i in range(binary):
+        if binary[i] == '1':
+            count += 1
     return count
 
 # better brute approach
