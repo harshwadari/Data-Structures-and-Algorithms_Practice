@@ -12,7 +12,7 @@ def decimal_to_binary(n):
         n = n // 10
     binary.reverse()
     return "".join(binary)
-print(decimal_to_binary(13))
+print(decimal_to_binary(5))
 
 
 
@@ -23,8 +23,8 @@ print(decimal_to_binary(13))
 def binary_to_decimal(binary):
     decimal = 0
     power = 0
-    index = 0
-    while index >= 1:
+    index = len(binary) - 1
+    while index >= 0:
         decimal += int(binary[index]) * (2 ** power)
         index -= 1
         power += 1

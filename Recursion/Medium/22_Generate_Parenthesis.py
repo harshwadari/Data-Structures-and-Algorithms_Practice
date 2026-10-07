@@ -35,3 +35,32 @@ def parenthesis(n:int) -> list[str]:
             arr.pop()
     backtrack(0,0,[])
     return result 
+
+
+
+
+
+
+
+
+
+
+
+# GFG Format 
+class Solution:
+    def generateParentheses(self, n: int) -> list[str]:
+        #code here
+        result = []
+        def backtrack(opencount,closecount,ans):
+            if len(ans) == n:
+                result.append("".join(ans))
+            if opencount < n//2:
+                ans.append('(')
+                backtrack(opencount+1,closecount,ans)
+                ans.pop()
+            if closecount < opencount:
+                ans.append(")")
+                backtrack(opencount,closecount+1,ans)
+                ans.pop()
+        backtrack(0,0,[])
+        return result

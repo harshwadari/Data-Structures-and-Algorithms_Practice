@@ -1,4 +1,4 @@
-# Swap two numbers without using a temporary variable
+#  Swap two numbers without using a temporary variable
 
 # brute force approach 
 # TC = O(1) and SC = O(1)

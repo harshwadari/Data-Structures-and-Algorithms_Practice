@@ -1,4 +1,4 @@
-# 792. LCM of two numbers
+# LCM of two numbers
 """
 You are given two integers n1 and n2. You need find the Lowest Common Multiple (LCM) 
 of the two given numbers. Return the LCM of the two numbers.
