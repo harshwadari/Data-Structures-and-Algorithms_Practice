@@ -10,6 +10,14 @@ Output: "()()()"
 Explanation: 
 The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
 After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
+
+
+
+Constraints:
+
+1 <= s.length <= 105
+s[i] is either '(' or ')'.
+s is a valid parentheses string.
 """
 
 
@@ -31,4 +39,23 @@ def outermost(s):
                 result += s[i]
     return result
 print(outermost("(())"))
-    
+
+
+
+
+
+# More optimal appraoch because in python strings are immutable += creates new string at every iteration making compleixity high
+# TC = O(N) and SC = O(1) Auxilary Space
+def Outermostoptimal(s:str) -> str:
+    ans = []
+    count = 0
+    for char in s:
+        if char == "(":
+            count += 1
+            if count > 1:
+                ans.append("(")
+        else:
+            count -= 1
+            if count > 0:
+                ans.append(")")
+    return "".join(ans)
