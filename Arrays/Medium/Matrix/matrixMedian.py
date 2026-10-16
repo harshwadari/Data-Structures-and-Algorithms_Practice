@@ -13,7 +13,7 @@ Output: 5
 Explanation: If we find the linear sorted array, the array becomes 1 2 3 4 5 6 7 8 9. So, median = 5
 """
 # brute approach using linear search of matrix traversal
-# TC = O(R*C log(R*C)) and SC = O(R*C)
+# TC = O(N*M) + O(NlogN) and SC = O(N)
 def medianMatrix(matrix):
     result = []
     rows = len(matrix)
@@ -22,5 +22,8 @@ def medianMatrix(matrix):
         for j in range(cols):
             result.appen(matrix[i][j])
     result.sort()
-    return result[(rows * cols)//2]
+    n = len(result)
+    if n % 2 != 0:
+        return result[n//2]
+    return (result[n//2 -1] + result[n//2] ) /2
   

@@ -64,14 +64,14 @@ Because if it is greater than everything seen so far on the right, it must be a 
 
 """
 
-# TC = O(N) and SC = O(N)
+# TC = O(N) and SC = O(1)
 def leaderArray(nums):
-    n = len(nums)
-    result = []
-    maxRight = nums[n-1]
-    for i in range(n-1,-1,-1):
-        if nums[i] >= maxRight:
-            result.append(nums[i])
-            maxRight = nums[i]
-    result.reverse()
-    return result
+    ans = []
+    ans.append(nums[-1])
+    nextGreater = nums[-1]
+    for i in range(len(nums)-2,-1,-1):
+        if nums[i] > nextGreater:
+            ans.append(nums[i])
+            nextGreater = nums[i]
+    nums.reverse()
+    return nums

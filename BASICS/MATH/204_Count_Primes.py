@@ -50,3 +50,39 @@ class Solution(object):
 
 # Otpimal Appraoch using sieve of erostatenus 
 # TC = O(NlogN) and SC = O(1)
+def countPrimeOptimal(n):
+    isprime = [True] * (n + 1)
+    isprime[0] = False
+    isprime[1] = False
+    for i in range(2,int(n**0.5)+1):
+        if isprime[i] == True:
+            for j in range(i*i,n,i):
+                isprime[j] = False
+    return sum(isprime)
+
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def primeRange(self, l, r):
+        # code here
+        isprime = [True] * (r+1)
+        isprime[0] = False
+        if r >= 1:
+            isprime[1] = False
+        for i in range(2,int(r**0.5)+1):
+            if isprime[i] == True:
+                for j in range(i*i,r+1,i):
+                    isprime[j] = False
+        ans = []
+        for i in range(max(2,l),r+1):
+            if isprime[i] == True:
+                ans.append(i)
+        return ans

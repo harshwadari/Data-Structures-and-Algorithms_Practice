@@ -5,7 +5,7 @@ Given a string s, sort it in decreasing order based on the frequency of the char
 Return the sorted string. If there are multiple answers, return any of them.
 """
 
-# better approach using dictionary and sroting
+# better approach using dictionary and sorting
 # TC = O(N log N) and SC = O(N)
 def sortcharfreq(s):
     freq = {}
