@@ -9,7 +9,7 @@ def decimal_to_binary(n):
             binary.append('0')
         else:
             binary.append('1')
-        n = n // 10
+        n = n // 2
     binary.reverse()
     return "".join(binary)
 print(decimal_to_binary(5))
