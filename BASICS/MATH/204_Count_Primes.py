@@ -56,9 +56,9 @@ def countPrimeOptimal(n):
     isprime[1] = False
     for i in range(2,int(n**0.5)+1):
         if isprime[i] == True:
-            for j in range(i*i,n,i):
+            for j in range(i*i,n+1,i):
                 isprime[j] = False
-    return sum(isprime)
+    return sum(isprime) # Python internally treat True as 1 and False as 0 so sum will result all 1's
 
 
 
